@@ -1,0 +1,17 @@
+The crypto trading bot is a Python script that utilizes the Binance API to automate cryptocurrency trading. It implements the triple moving average indicator strategy to determine when to buy and sell cryptocurrencies. The script continuously fetches the latest candlestick data for a specified trading pair and time frame from the Binance exchange.
+
+The triple moving average strategy calculates three simple moving averages (SMAs) using different time periods: short, medium, and long. It compares the values of these moving averages to generate buy and sell signals. If the short-term SMA is above the medium-term SMA and the medium-term SMA is above the long-term SMA, a buy signal is generated. Conversely, if the short-term SMA is below the medium-term SMA and the medium-term SMA is below the long-term SMA, a sell signal is generated.
+
+When a buy signal is generated, the script places a market buy order for the specified trading pair and amount. It also calculates the stop loss and take profit prices based on predefined percentages. The stop loss helps limit potential losses, while the take profit captures profits by selling at a specified target price.
+
+When a sell signal is generated, the script places a market sell order to close the position. This allows the bot to take profits when the strategy indicates a favorable selling opportunity.
+
+Additionally, the script incorporates risk management with a 2:1 reward-to-risk ratio. This means that the take profit target is set at twice the distance of the stop loss from the entry price. It aims to achieve a higher reward relative to the potential risk.
+
+To lock in profits and adapt to changing market conditions, the script uses a trailing stop loss. It continuously monitors the position and updates the stop loss price as the price moves in a favorable direction. This allows the bot to protect profits by adjusting the stop loss upward.
+
+The script runs in a continuous loop, periodically fetching new candlestick data and evaluating trading signals. It also includes error handling to catch and display any exceptions that may occur during execution.
+
+It's important to note that this script serves as a starting point and should be thoroughly tested and customized before using it with real funds. Cryptocurrency trading involves risks, and it's crucial to have a solid understanding of trading strategies, risk management, and API interactions.
+
+Please ensure you have the necessary knowledge and experience in trading and cryptocurrency markets before using this script.
